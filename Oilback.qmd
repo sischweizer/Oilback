@@ -1,0 +1,92 @@
+---
+title: "OILBACK - Sustainable Metal Manufacturing"
+date: today
+author:
+    name: Simon Schweizer
+    orcid: 0009-0001-2771-4164
+    email: sischweizer@ethz.ch
+    affiliation: 
+      - name: ETH Zurich
+        url: https://ethz.ch/de.html
+abstract: "This study explores the differences in sustainability practices related to waste management between international and local Swiss students in Zurich, focusing on waste reduction, recycling, and reuse, alongside their awareness of local waste management systems."
+format: 
+  html:
+    toc: true
+    toc_depth: 3
+    code_folding: show
+number-sections: true
+execute:
+  warning: false
+editor: visual
+theme: quartz # You can change the theme here
+---
+
+# Welcome to OILBACK
+![Main Banner Image](Pictures/Banner.jpg)
+
+## Our Mission
+We aim to revolutionize the metal manufacturing industry through the integration of Circular Economy principles. By reclaiming and reusing cutting fluids from oily metal chips, we reduce waste, emissions, and manufacturing costs.
+
+*This section introduces the main mission of OILBACK.*  
+
+![Circular Economy Image](path/to/circular_image.jpg)
+
+---
+
+## Problem Overview
+The metal manufacturing industry produces significant waste in the form of oily metal chips, which leads to high costs and environmental harm. Currently, manufacturers must dispose of this waste through inefficient methods.
+
+**Current issues:**
+- Metal chips with 20% oil content by weight
+- Inefficient off-site recycling processes
+- High waste disposal costs
+
+![Problem Image](path/to/problem_image.jpg)
+
+---
+
+## Our Solution
+We bring the recycling process to the manufacturer’s site! Our mobile recycling units separate oil and metal chips, allowing the oil to be reused, and the metal chips sent directly to recycling.
+
+**Advantages:**
+- On-site oil recycling reduces waste
+- Cost savings on oil and disposal
+- Reduced environmental impact
+
+![Solution Image](path/to/solution_image.jpg)
+
+---
+
+## Benefits to Manufacturers
+- **Economic**: Save up to 100,000 CHF annually through reduced oil purchasing and efficient recycling.
+- **Sustainability**: Reduce oil-related emissions by up to 90%.
+- **Process Efficiency**: Minimize logistical complexities and boost operational efficiency.
+
+## Team
+Meet the team behind OILBACK:
+
+- **Benjamin Ott**: Engineering Manager
+- **Valentin Egli**: Project Lead
+- **Simon Schweizer**: Sustainability Lead
+- **Andrey Struffi**: Mechanical Engineer
+- **Felix Morlock**: Biomedical Engineering Specialist
+- **Viktor Rasmussen**: Mathematical Engineering Specialist
+
+![Team Image](path/to/team_image.jpg)
+
+---
+
+## Future Goals
+We aim to scale our operations across Switzerland and Europe. Our next steps include building partnerships with key manufacturers and expanding our fleet of mobile recycling units.
+
+![Future Plans Image](path/to/future_plans_image.jpg)
+
+---
+
+## Contact Us
+Interested in collaborating with us? Reach out at: [your-email@example.com](mailto:your-email@example.com)
+
+
+
+
+------------------------------------------------------------------------
