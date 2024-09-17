@@ -21,26 +21,37 @@
             font-family: 'Poppins', sans-serif;
             background-color: #f8f9fa;
             color: #333;
-            position: relative;
         }
 
+        /* Updated Header with background image */
         header {
-            background-color: #007bff;
+            background: url('/mnt/data/Banner.jpg') no-repeat center center;
+            background-size: cover;
             color: white;
-            padding: 2rem 0;
+            padding: 6rem 0; /* Adjust padding for better visibility */
             text-align: center;
         }
 
             header h1 {
-                font-size: 3rem;
-                font-weight: 600;
+                font-size: 4rem; /* Increased font size */
+                font-weight: 700; /* Heavier font */
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Added text shadow for better readability */
+                letter-spacing: 2px; /* Added letter spacing */
             }
 
+            header p {
+                font-size: 1.5rem;
+                margin-top: 1rem;
+                font-weight: 400;
+                text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Added text shadow */
+            }
+
+        /* General Section Styling */
         .section {
             padding: 3rem 0;
         }
 
-        /* Clock styles */
+        /* Clock Section Styling */
         .clock-container {
             text-align: center;
             margin: 3rem 0;
@@ -276,105 +287,30 @@
         <section class="section" id="problem">
             <div class="container">
                 <h2>The Problem</h2>
-                <p>The metal manufacturing industry generates significant waste in the form of oily metal chips. Manufacturers must currently dispose of this waste through expensive and inefficient methods, leading to both financial and environmental harm.</p>
-                <img src="Pictures/Problem.jpg" alt="Problem Image" class="small-image">
+                <p>The metal manufacturing industry generates significant waste in the form of oily metal chips. Manufacturers must currently dispose of this waste through expensive and inefficient methods.</p>
             </div>
         </section>
 
         <!-- Solution Section -->
         <section class="section" id="solution">
             <div class="container">
-                <h2>Our Solution</h2>
-                <p>We provide a mobile recycling service that separates oil from metal chips directly at the manufacturer's site, allowing them to reuse the oil and efficiently recycle the metal. This process is faster, cheaper, and much more sustainable.</p>
-                <img src="Pictures/Solution.jpg" alt="Solution Image" class="small-image">
+                <h2>The Solution</h2>
+                <p>We offer an on-site service to recycle the cutting fluids used in metal processing, reducing waste, lowering costs, and promoting sustainability.</p>
             </div>
         </section>
-
-        <!-- Benefits Section -->
-        <section class="benefits text-white" id="benefits">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 benefit-item">
-                        <i class="fas fa-dollar-sign"></i>
-                        <h3>Economic Benefits</h3>
-                        <p>Save up to 100,000 CHF annually through reduced oil and waste disposal costs.</p>
-                    </div>
-                    <div class="col-md-4 benefit-item">
-                        <i class="fas fa-globe"></i>
-                        <h3>Environmental Impact</h3>
-                        <p>Reduce your carbon footprint and contribute to a cleaner environment.</p>
-                    </div>
-                    <div class="col-md-4 benefit-item">
-                        <i class="fas fa-tools"></i>
-                        <h3>Efficiency</h3>
-                        <p>Our on-site service allows manufacturers to focus on production while we handle the recycling.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Future of OILBACK Section -->
-        <section class="section" id="future">
-            <div class="container">
-                <h2>The Future of OILBACK</h2>
-                <p>With the potential to reduce environmental impact and save costs, OILBACK aims to expand its services across Europe, making sustainable practices the norm in the metal manufacturing industry.</p>
-                <img src="Pictures/Future.jpg" alt="Future Image" class="small-image">
-            </div>
-        </section>
-
     </div>
 
-    <!-- Contact Us Button and Section -->
-    <div class="text-center">
-        <button class="btn-contact" id="contactBtn" style="display:none;">Contact Us Now</button> <!-- Hidden at the start -->
-    </div>
-
-    <!-- Contact Us Section (Initially Hidden) -->
-    <section class="hidden-contact" id="contactSection">
-        <div class="container text-center mt-5">
-            <h2>Contact Us</h2>
-            <p>For more information, get in touch with us via email or phone.</p>
-            <p>Email: contact@oilback.com | Phone: +41 123 456 789</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>© 2024 OILBACK. All Rights Reserved. <a href="#">Privacy Policy</a></p>
-        </div>
-    </footer>
+    <!-- Bootstrap & jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <!-- Custom JavaScript -->
     <script>
-        document.getElementById('learnMoreBtn').addEventListener('click', function () {
-            document.getElementById('hiddenContent').classList.toggle('visible');
-            document.getElementById('contactBtn').style.display = 'inline-block'; // Show Contact Us button after learn more
-        });
-
-        // Logic to show Contact Us section, grey out the rest of the page, and enlarge contact section
-        const contactBtn = document.getElementById('contactBtn');
-        const contactSection = document.getElementById('contactSection');
-        const body = document.body;
-
-        contactBtn.addEventListener('click', function () {
-            contactSection.style.display = 'block';  // Show contact section
-            contactSection.style.transform = 'scale(1.2)'; // Enlarge contact section
-            body.classList.add('greyed-out');       // Grey out rest of page
-            contactSection.classList.add('contact-visible');  // Keep contact section visible
-        });
-
-        // Logic to reset greyed-out effect and hide contact section when clicking outside
-        document.addEventListener('click', function (event) {
-            if (!contactSection.contains(event.target) && !contactBtn.contains(event.target)) {
-                contactSection.style.display = 'none';  // Hide contact section
-                body.classList.remove('greyed-out');    // Remove grey-out effect
-                contactSection.classList.remove('contact-visible');  // Reset contact section
-                contactSection.style.transform = 'scale(1)';  // Reset size
-                document.getElementById('contactBtn').style.display = 'none';  // Hide button again
-            }
+        document.getElementById("learnMoreBtn").addEventListener("click", function () {
+            var hiddenSection = document.getElementById("hiddenContent");
+            hiddenSection.classList.toggle("visible");
         });
     </script>
-
 </body>
 </html>
