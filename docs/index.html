@@ -21,28 +21,67 @@
             font-family: 'Poppins', sans-serif;
             background-color: #f8f9fa;
             color: #333;
+        }
+
+        /* Header Section with Image */
+        header {
+            background-image: url('Pictures/TopBanner.jpg'); /* Replace with your banner image URL */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
             position: relative;
         }
 
-        header {
-            background-color: #007bff;
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
+        /* Logo inside the Header */
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100px; /* Adjust as needed */
         }
 
-            header h1 {
-                font-size: 3rem;
-                font-weight: 600;
+        header h1 {
+            font-size: 3rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: #f0f0f0;
+        }
+
+        /* Section Titles Styling */
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            color: #007bff;
+        }
+
+            h2:after {
+                content: '';
+                display: block;
+                width: 80px;
+                height: 4px;
+                background-color: #ff4d4d;
+                margin: 0.5rem auto 1.5rem;
             }
 
+        /* Section content styling */
         .section {
             padding: 3rem 0;
+            text-align: center;
         }
 
         /* Clock styles */
         .clock-container {
-            text-align: center;
             margin: 3rem 0;
         }
 
@@ -54,7 +93,6 @@
         }
 
         .clock {
-            position: relative;
             width: 220px;
             height: 220px;
             border: 6px solid #007bff;
@@ -82,7 +120,14 @@
                 left: 108px;
             }
 
-        /* Faster animation for clock */
+        .minute-hand {
+            animation: spin-minute 20s linear infinite;
+        }
+
+        .hour-hand {
+            animation: spin-hour 240s linear infinite;
+        }
+
         @keyframes spin-minute {
             from {
                 transform: rotate(0deg);
@@ -103,14 +148,6 @@
             }
         }
 
-        .minute-hand {
-            animation: spin-minute 20s linear infinite;
-        }
-
-        .hour-hand {
-            animation: spin-hour 240s linear infinite;
-        }
-
         .clock-message-bottom {
             font-size: 1.8rem;
             font-weight: 600;
@@ -118,7 +155,6 @@
             margin: 1.5rem 0;
         }
 
-        /* Button styles */
         .btn-learn-more {
             font-size: 1.2rem;
             color: white;
@@ -126,7 +162,6 @@
             border: none;
             padding: 0.8rem 1.5rem;
             border-radius: 30px;
-            transition: background-color 0.3s ease;
             cursor: pointer;
         }
 
@@ -134,12 +169,10 @@
                 background-color: #0056b3;
             }
 
-        /* Hide sections initially */
         .hidden-section {
             display: none;
         }
 
-        /* Reveal sections when button clicked */
         .visible {
             display: block;
             animation: fadeIn 1s ease-in-out;
@@ -155,40 +188,12 @@
             }
         }
 
-        .benefits {
-            background-color: #007bff;
-            color: white;
-            padding: 2rem 0;
+        .small-image {
+            max-width: 80%;
+            margin: 0 auto;
+            display: block;
         }
 
-        .benefit-item {
-            text-align: center;
-            padding: 2rem;
-        }
-
-            .benefit-item h3 {
-                font-size: 1.5rem;
-                margin-bottom: 1rem;
-            }
-
-            .benefit-item i {
-                font-size: 3rem;
-                margin-bottom: 1rem;
-            }
-
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 1rem 0;
-            text-align: center;
-        }
-
-            footer a {
-                color: #007bff;
-                text-decoration: none;
-            }
-
-        /* Contact Button at the end */
         .btn-contact {
             font-size: 1.2rem;
             color: white;
@@ -196,23 +201,14 @@
             border: none;
             padding: 0.8rem 1.5rem;
             border-radius: 30px;
-            transition: background-color 0.3s ease;
             cursor: pointer;
             margin-top: 2rem;
         }
 
-        /* Custom image size for larger images */
-        .small-image {
-            max-width: 80%; /* Increased image size */
-            margin: 0 auto;
-            display: block;
-        }
+            .btn-contact:hover {
+                background-color: #e02b2b;
+            }
 
-        .btn-contact:hover {
-            background-color: #e02b2b;
-        }
-
-        /* Contact section initially hidden */
         .hidden-contact {
             display: none;
             background-color: white;
@@ -227,7 +223,6 @@
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
         }
 
-        /* Grey-out effect */
         .greyed-out {
             opacity: 0.5;
             pointer-events: none;
@@ -237,6 +232,18 @@
             opacity: 1;
             pointer-events: auto;
         }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+            footer a {
+                color: #007bff;
+                text-decoration: none;
+            }
     </style>
 </head>
 
@@ -244,6 +251,7 @@
 
     <!-- Header Section -->
     <header>
+        <img src="Pictures/Logo.png" alt="Oilback Logo" class="logo"> <!-- Adjust path to logo -->
         <div class="container">
             <h1>OILBACK - Sustainable Metal Manufacturing</h1>
             <p>Revolutionizing the metal industry with Circular Economy principles.</p>
@@ -291,13 +299,14 @@
         </section>
 
         <!-- Benefits Section -->
-        <section class="benefits text-white" id="benefits">
+        <section class="section" id="benefits">
             <div class="container">
+                <h2>Benefits of OILBACK</h2>
                 <div class="row">
                     <div class="col-md-4 benefit-item">
-                        <i class="fas fa-dollar-sign"></i>
-                        <h3>Economic Benefits</h3>
-                        <p>Save up to 100,000 CHF annually through reduced oil and waste disposal costs.</p>
+                        <i class="fas fa-money-bill-wave"></i>
+                        <h3>Cost Savings</h3>
+                        <p>Reduce waste disposal and oil purchase costs significantly.</p>
                     </div>
                     <div class="col-md-4 benefit-item">
                         <i class="fas fa-globe"></i>
@@ -326,7 +335,7 @@
 
     <!-- Contact Us Button and Section -->
     <div class="text-center">
-        <button class="btn-contact" id="contactBtn" style="display:none;">Contact Us Now</button> <!-- Hidden at the start -->
+        <button class="btn-contact" id="contactBtn" style="display:none;">Contact Us Now</button>
     </div>
 
     <!-- Contact Us Section (Initially Hidden) -->
