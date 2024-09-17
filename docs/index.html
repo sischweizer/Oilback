@@ -200,16 +200,27 @@
             margin-top: 2rem;
         }
 
-        /* Custom image size for smaller images */
+        /* Custom image size for larger images */
         .small-image {
-            max-width: 50%;
+            max-width: 70%; /* Increased image size */
             margin: 0 auto;
             display: block;
         }
 
-            .btn-contact:hover {
-                background-color: #e02b2b;
-            }
+        .btn-contact:hover {
+            background-color: #e02b2b;
+        }
+
+        /* Contact section initially hidden */
+        .hidden-contact {
+            display: none;
+        }
+
+        /* Grey-out effect */
+        .greyed-out {
+            opacity: 0.5;
+            pointer-events: none;
+        }
     </style>
 </head>
 
@@ -278,56 +289,71 @@
                         <p>Reduce oil-related emissions by 90%, helping to meet strict environmental regulations.</p>
                     </div>
                     <div class="col-md-4 benefit-item">
-                        <i class="fas fa-cogs"></i>
+                        <i class="fas fa-tools"></i>
                         <h3>Efficiency</h3>
-                        <p>Our mobile units reduce logistics complexity, offering manufacturers an easy, hassle-free solution.</p>
+                        <p>Our on-site service allows manufacturers to focus on production while we handle the recycling.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Us Section -->
-        <section class="section" id="contact">
+        <!-- Future of OILBACK Section -->
+        <section class="section" id="future">
             <div class="container">
-                <h2>Contact Us</h2>
-                <p>Get in touch with us to explore how OILBACK can help your company reduce costs and improve sustainability.</p>
-                <button class="btn-contact" id="contactBtn">Contact Us Now</button>
+                <h2>The Future of OILBACK</h2>
+                <p>With the potential to reduce environmental impact and save costs, OILBACK aims to expand its services across Europe, making sustainable practices the norm in the metal manufacturing industry.</p>
+                <img src="Pictures/Future.jpg" alt="Future Image" class="small-image">
             </div>
         </section>
+
     </div>
 
-    <!-- Footer Section -->
+    <!-- Contact Us Button and Section -->
+    <div class="text-center">
+        <button class="btn-contact" id="contactBtn">Contact Us Now</button>
+    </div>
+
+    <!-- Contact Us Section (Initially Hidden) -->
+    <section class="hidden-contact" id="contactSection">
+        <div class="container text-center mt-5">
+            <h2>Contact Us</h2>
+            <p>For more information, get in touch with us via email or phone.</p>
+            <p>Email: contact@oilback.com | Phone: +41 123 456 789</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 OILBACK - All Rights Reserved</p>
+        <div class="container">
+            <p>© 2024 OILBACK. All Rights Reserved. <a href="#">Privacy Policy</a></p>
+        </div>
     </footer>
 
-    <!-- JavaScript for dynamic content visibility -->
+    <!-- Custom JavaScript -->
     <script>
         document.getElementById('learnMoreBtn').addEventListener('click', function () {
-            document.getElementById('hiddenContent').classList.add('visible');
+            document.getElementById('hiddenContent').classList.toggle('visible');
         });
 
-        // Scroll to contact section when 'Contact Us Now' is clicked
-        document.getElementById('contactBtn').addEventListener('click', function () {
-            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        // Logic to show Contact Us section and grey out the rest of the page
+        const contactBtn = document.getElementById('contactBtn');
+        const contactSection = document.getElementById('contactSection');
+        const body = document.body;
+
+        contactBtn.addEventListener('click', function () {
+            contactSection.style.display = 'block';  // Show contact section
+            body.classList.add('greyed-out');       // Grey out rest of page
+            contactSection.classList.remove('greyed-out');  // Keep contact section visible
         });
 
-        // Clock animation script
-        const minuteHand = document.querySelector('.minute-hand');
-        const hourHand = document.querySelector('.hour-hand');
-
-        setInterval(() => {
-            const now = new Date();
-            const seconds = now.getSeconds();
-            const minutes = now.getMinutes();
-            const hours = now.getHours();
-
-            const minuteDegree = ((minutes / 60) * 360) + ((seconds / 60) * 6);
-            const hourDegree = ((hours / 12) * 360) + ((minutes / 60) * 30);
-
-            minuteHand.style.transform = `rotate(${minuteDegree}deg)`;
-            hourHand.style.transform = `rotate(${hourDegree}deg)`;
-        }, 1000);
+        // Logic to reset greyed-out effect when clicking outside contact section
+        document.addEventListener('click', function (event) {
+            if (!contactSection.contains(event.target) && !contactBtn.contains(event.target)) {
+                contactSection.style.display = 'none';  // Hide contact section
+                body.classList.remove('greyed-out');    // Remove grey-out effect
+            }
+        });
     </script>
+
 </body>
 </html>
