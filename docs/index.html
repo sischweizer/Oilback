@@ -21,6 +21,7 @@
             font-family: 'Poppins', sans-serif;
             background-color: #f8f9fa;
             color: #333;
+            position: relative;
         }
 
         header {
@@ -202,7 +203,7 @@
 
         /* Custom image size for larger images */
         .small-image {
-            max-width: 70%; /* Increased image size */
+            max-width: 80%; /* Increased image size */
             margin: 0 auto;
             display: block;
         }
@@ -214,12 +215,27 @@
         /* Contact section initially hidden */
         .hidden-contact {
             display: none;
+            background-color: white;
+            padding: 3rem;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 999;
+            width: 60%;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
         }
 
         /* Grey-out effect */
         .greyed-out {
             opacity: 0.5;
             pointer-events: none;
+        }
+
+        .contact-visible {
+            opacity: 1;
+            pointer-events: auto;
         }
     </style>
 </head>
@@ -284,9 +300,9 @@
                         <p>Save up to 100,000 CHF annually through reduced oil and waste disposal costs.</p>
                     </div>
                     <div class="col-md-4 benefit-item">
-                        <i class="fas fa-leaf"></i>
-                        <h3>Sustainability</h3>
-                        <p>Reduce oil-related emissions by 90%, helping to meet strict environmental regulations.</p>
+                        <i class="fas fa-globe"></i>
+                        <h3>Environmental Impact</h3>
+                        <p>Reduce your carbon footprint and contribute to a cleaner environment.</p>
                     </div>
                     <div class="col-md-4 benefit-item">
                         <i class="fas fa-tools"></i>
@@ -310,7 +326,7 @@
 
     <!-- Contact Us Button and Section -->
     <div class="text-center">
-        <button class="btn-contact" id="contactBtn">Contact Us Now</button>
+        <button class="btn-contact" id="contactBtn" style="display:none;">Contact Us Now</button> <!-- Hidden at the start -->
     </div>
 
     <!-- Contact Us Section (Initially Hidden) -->
@@ -333,24 +349,29 @@
     <script>
         document.getElementById('learnMoreBtn').addEventListener('click', function () {
             document.getElementById('hiddenContent').classList.toggle('visible');
+            document.getElementById('contactBtn').style.display = 'inline-block'; // Show Contact Us button after learn more
         });
 
-        // Logic to show Contact Us section and grey out the rest of the page
+        // Logic to show Contact Us section, grey out the rest of the page, and enlarge contact section
         const contactBtn = document.getElementById('contactBtn');
         const contactSection = document.getElementById('contactSection');
         const body = document.body;
 
         contactBtn.addEventListener('click', function () {
             contactSection.style.display = 'block';  // Show contact section
+            contactSection.style.transform = 'scale(1.2)'; // Enlarge contact section
             body.classList.add('greyed-out');       // Grey out rest of page
-            contactSection.classList.remove('greyed-out');  // Keep contact section visible
+            contactSection.classList.add('contact-visible');  // Keep contact section visible
         });
 
-        // Logic to reset greyed-out effect when clicking outside contact section
+        // Logic to reset greyed-out effect and hide contact section when clicking outside
         document.addEventListener('click', function (event) {
             if (!contactSection.contains(event.target) && !contactBtn.contains(event.target)) {
                 contactSection.style.display = 'none';  // Hide contact section
                 body.classList.remove('greyed-out');    // Remove grey-out effect
+                contactSection.classList.remove('contact-visible');  // Reset contact section
+                contactSection.style.transform = 'scale(1)';  // Reset size
+                document.getElementById('contactBtn').style.display = 'none';  // Hide button again
             }
         });
     </script>
