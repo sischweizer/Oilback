@@ -40,13 +40,25 @@
         }
 
         /* Clock styles */
+        .clock-container {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .clock-message-top {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff4d4d;
+            margin-bottom: 1rem;
+        }
+
         .clock {
             position: relative;
-            width: 200px;
-            height: 200px;
+            width: 220px;
+            height: 220px;
             border: 6px solid #007bff;
             border-radius: 50%;
-            margin: 2rem auto;
+            margin: 1rem auto;
         }
 
             .clock .hand {
@@ -58,15 +70,15 @@
             }
 
             .clock .hour-hand {
-                height: 50px;
+                height: 60px;
                 top: 50px;
-                left: 98px;
+                left: 108px;
             }
 
             .clock .minute-hand {
-                height: 80px;
+                height: 90px;
                 top: 20px;
-                left: 98px;
+                left: 108px;
             }
 
         /* Faster animation for clock */
@@ -98,19 +110,48 @@
             animation: spin-hour 240s linear infinite;
         }
 
-        /* Add dynamic text below the clock */
-        .dynamic-message {
-            text-align: center;
+        .clock-message-bottom {
             font-size: 1.8rem;
             font-weight: 600;
             color: #007bff;
             margin: 1.5rem 0;
         }
 
-        .section img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
+        /* Button styles */
+        .btn-learn-more {
+            font-size: 1.2rem;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+            .btn-learn-more:hover {
+                background-color: #0056b3;
+            }
+
+        /* Hide sections initially */
+        .hidden-section {
+            display: none;
+        }
+
+        /* Reveal sections when button clicked */
+        .visible {
+            display: block;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         .benefits {
@@ -146,52 +187,22 @@
                 text-decoration: none;
             }
 
-        /* Button hover effect */
-        .btn-dynamic {
+        /* Contact Button at the end */
+        .btn-contact {
             font-size: 1.2rem;
             color: white;
-            background-color: #007bff;
+            background-color: #ff4d4d;
             border: none;
             padding: 0.8rem 1.5rem;
             border-radius: 30px;
             transition: background-color 0.3s ease;
             cursor: pointer;
-        }
-
-            .btn-dynamic:hover {
-                background-color: #0056b3;
-            }
-
-        /* Scroll down arrow */
-        .scroll-down {
-            display: block;
-            font-size: 2rem;
-            color: #007bff;
-            text-align: center;
             margin-top: 2rem;
-            animation: bounce 1.5s infinite;
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
+            .btn-contact:hover {
+                background-color: #e02b2b;
             }
-
-            40% {
-                transform: translateY(-10px);
-            }
-
-            60% {
-                transform: translateY(-5px);
-            }
-        }
-
-        /* Custom image size for smaller images */
-        .small-image {
-            max-width: 50%;
-            margin: 0 auto;
-            display: block;
-        }
     </style>
 </head>
 
@@ -206,101 +217,98 @@
     </header>
 
     <!-- Clock Section -->
-    <div class="clock">
-        <div class="hand hour-hand"></div>
-        <div class="hand minute-hand"></div>
+    <div class="clock-container">
+        <div class="clock-message-top">The clock is ticking!</div>
+        <div class="clock">
+            <div class="hand hour-hand"></div>
+            <div class="hand minute-hand"></div>
+        </div>
+        <div class="clock-message-bottom">The world is not waiting for sustainability to happen.</div>
+        <button class="btn-learn-more" id="learnMoreBtn">Learn More About the Project</button>
     </div>
 
-    <!-- Dynamic Message under Clock -->
-    <div class="dynamic-message">
-        The clock is ticking! The world is not waiting for sustainability to happen.
-    </div>
+    <!-- Hidden Content Section -->
+    <div class="hidden-section" id="hiddenContent">
+        <!-- Mission Section -->
+        <section class="section" id="mission">
+            <div class="container">
+                <h2>Our Mission</h2>
+                <p>At OILBACK, we aim to reduce waste and emissions by reclaiming and reusing cutting fluids from metal chips. Our innovative mobile recycling service ensures eco-efficiency and financial savings for manufacturers.</p>
+                <img src="Pictures/Banner.jpg" alt="Mission Image" class="small-image">
+            </div>
+        </section>
 
-    <!-- Scroll Down Indicator -->
-    <a href="#mission" class="scroll-down">
-        <i class="fas fa-chevron-down"></i>
-    </a>
+        <!-- Problem Section -->
+        <section class="section" id="problem">
+            <div class="container">
+                <h2>The Problem</h2>
+                <p>The metal manufacturing industry generates significant waste in the form of oily metal chips. Manufacturers must currently dispose of this waste through expensive and inefficient methods, leading to both financial and environmental harm.</p>
+                <img src="Pictures/Problem.jpg" alt="Problem Image" class="small-image">
+            </div>
+        </section>
 
-    <!-- Mission Section -->
-    <section class="section" id="mission">
-        <div class="container">
-            <h2>Our Mission</h2>
-            <p>At OILBACK, we aim to reduce waste and emissions by reclaiming and reusing cutting fluids from metal chips. Our innovative mobile recycling service ensures eco-efficiency and financial savings for manufacturers.</p>
-            <img src="Pictures/Banner.jpg" alt="Mission Image" class="small-image">
-        </div>
-    </section>
+        <!-- Solution Section -->
+        <section class="section" id="solution">
+            <div class="container">
+                <h2>Our Solution</h2>
+                <p>We provide a mobile recycling service that separates oil from metal chips directly at the manufacturer's site, allowing them to reuse the oil and efficiently recycle the metal. This process is faster, cheaper, and much more sustainable.</p>
+                <img src="Pictures/Solution.jpg" alt="Solution Image" class="small-image">
+            </div>
+        </section>
 
-    <!-- Problem Section -->
-    <section class="section" id="problem">
-        <div class="container">
-            <h2>The Problem</h2>
-            <p>The metal manufacturing industry generates significant waste in the form of oily metal chips. Manufacturers must currently dispose of this waste through expensive and inefficient methods, leading to both financial and environmental harm.</p>
-            <img src="Pictures/Problem.jpg" alt="Problem Image" class="small-image">
-        </div>
-    </section>
-
-    <!-- Solution Section -->
-    <section class="section" id="solution">
-        <div class="container">
-            <h2>Our Solution</h2>
-            <p>We provide a mobile recycling service that separates oil from metal chips directly at the manufacturer's site, allowing them to reuse the oil and efficiently recycle the metal. This process is faster, cheaper, and much more sustainable.</p>
-            <img src="Pictures/Solution.jpg" alt="Solution Image" class="small-image">
-        </div>
-    </section>
-
-    <!-- Benefits Section -->
-    <section class="benefits text-white" id="benefits">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 benefit-item">
-                    <i class="fas fa-dollar-sign"></i>
-                    <h3>Economic Benefits</h3>
-                    <p>Save up to 100,000 CHF annually through reduced oil and waste disposal costs.</p>
-                </div>
-                <div class="col-md-4 benefit-item">
-                    <i class="fas fa-leaf"></i>
-                    <h3>Sustainability</h3>
-                    <p>Reduce oil-related emissions by 90%, helping to meet strict environmental regulations.</p>
-                </div>
-                <div class="col-md-4 benefit-item">
-                    <i class="fas fa-cogs"></i>
-                    <h3>Efficiency</h3>
-                    <p>Our mobile units reduce logistics complexity, offering manufacturers an easy, hassle-free solution.</p>
+        <!-- Benefits Section -->
+        <section class="benefits text-white" id="benefits">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 benefit-item">
+                        <i class="fas fa-dollar-sign"></i>
+                        <h3>Economic Benefits</h3>
+                        <p>Save up to 100,000 CHF annually through reduced oil and waste disposal costs.</p>
+                    </div>
+                    <div class="col-md-4 benefit-item">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Sustainability</h3>
+                        <p>Reduce oil-related emissions by 90%, helping to meet strict environmental regulations.</p>
+                    </div>
+                    <div class="col-md-4 benefit-item">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Efficiency</h3>
+                        <p>Our mobile units reduce logistics complexity, offering manufacturers an easy, hassle-free solution.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Team Section -->
-    <section class="section" id="team">
-        <div class="container">
-            <h2>Meet Our Team</h2>
-            <p>We are a multidisciplinary team of experts in engineering, sustainability, and management. Together, we are driving the future of eco-friendly metal manufacturing.</p>
-            <img src="Pictures/Team.jpg" alt="Team Image" class="small-image">
-        </div>
-    </section>
-
-    <!-- Next Steps -->
-    <section class="section" id="nextsteps">
-        <div class="container">
-            <h2>The Future of OILBACK</h2>
-            <img src="Pictures/Steps.jpg" alt="Future Image" class="small-image">
-            <img src="Pictures/Join.jpg" alt="Join Us Image" class="small-image">
-            <a href="#nextsteps" class="btn-dynamic">Learn More</a>
-        </div>
-    </section>
+        <!-- Contact Us Section -->
+        <section class="section" id="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>Get in touch with us to explore how OILBACK can help your company reduce costs and improve sustainability.</p>
+                <button class="btn-contact" id="contactBtn">Contact Us Now</button>
+            </div>
+        </section>
+    </div>
 
     <!-- Footer Section -->
     <footer>
         <p>&copy; 2024 OILBACK - All Rights Reserved</p>
     </footer>
 
-    <!-- Scroll Reveal for Clock Animation -->
+    <!-- JavaScript for dynamic content visibility -->
     <script>
+        document.getElementById('learnMoreBtn').addEventListener('click', function () {
+            document.getElementById('hiddenContent').classList.add('visible');
+        });
+
+        // Scroll to contact section when 'Contact Us Now' is clicked
+        document.getElementById('contactBtn').addEventListener('click', function () {
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Clock animation script
         const minuteHand = document.querySelector('.minute-hand');
         const hourHand = document.querySelector('.hour-hand');
 
-        // Keep minute and hour hand running
         setInterval(() => {
             const now = new Date();
             const seconds = now.getSeconds();
