@@ -7,316 +7,299 @@
     <meta name="author" content="Oilback Team">
     <title>OILBACK - Circular Economy in Metal Manufacturing</title>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- font icons -->
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
     
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    
-    <!-- Custom CSS -->
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
-        }
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/css/owl.carousel.css">
+    <link rel="stylesheet" href="assets/vendors/owl-carousel/css/owl.theme.default.css">
 
-        header {
-            background: url("Pictures/Banner.jpg") no-repeat center center;
-            background-size: cover;
-            color: white;
-            padding: 6rem 0;
-            text-align: center;
-        }
+    <!-- Bootstrap + main styles -->
+    <link rel="stylesheet" href="assets/css/ollie.css">
 
-        header h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-        }
-
-        header p {
-            font-size: 1.5rem;
-            margin-top: 1rem;
-            font-weight: 400;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-        }
-
-        .section {
-            padding: 3rem 0;
-        }
-
-        .clock-container {
-            text-align: center;
-            margin: 3rem 0;
-        }
-
-        .clock-message-top {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #ff4d4d;
-            margin-bottom: 1rem;
-        }
-
-        .clock {
-            position: relative;
-            width: 220px;
-            height: 220px;
-            border: 6px solid #007bff;
-            border-radius: 50%;
-            margin: 1rem auto;
-        }
-
-        .clock .hand {
-            position: absolute;
-            width: 4px;
-            background-color: #007bff;
-            transform-origin: 50% 100%;
-        }
-
-        .clock .hour-hand {
-            height: 60px;
-            top: 50px;
-            left: 108px;
-        }
-
-        .clock .minute-hand {
-            height: 90px;
-            top: 20px;
-            left: 108px;
-        }
-
-        @keyframes spin-minute {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        @keyframes spin-hour {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(3600deg); }
-        }
-
-        .minute-hand { animation: spin-minute 20s linear infinite; }
-        .hour-hand { animation: spin-hour 240s linear infinite; }
-
-        .clock-message-bottom {
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: #007bff;
-            margin: 1.5rem 0;
-        }
-
-        .btn-learn-more {
-            font-size: 1.2rem;
-            color: white;
-            background-color: #007bff;
-            padding: 0.8rem 1.5rem;
-            border-radius: 30px;
-            cursor: pointer;
-        }
-
-        .btn-learn-more:hover {
-            background-color: #0056b3;
-        }
-
-        .hidden-section {
-            display: none;
-        }
-
-        .visible {
-            display: block;
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .benefits {
-            background-color: #007bff;
-            color: white;
-            padding: 2rem 0;
-        }
-
-        .benefit-item {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .benefit-item h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .benefit-item i {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 1rem 0;
-            text-align: center;
-        }
-
-        footer a {
-            color: #007bff;
-        }
-
-        .small-image {
-            max-width: 80%;
-            margin: 0 auto;
-            display: block;
-        }
-
-        .btn-contact {
-            font-size: 1.2rem;
-            color: white;
-            background-color: #ff4d4d;
-            border: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 30px;
-            cursor: pointer;
-            margin-top: 2rem;
-        }
-
-        .btn-contact:hover {
-            background-color: #e02b2b;
-        }
-
-        .hidden-contact {
-            display: none;
-            background-color: white;
-            padding: 3rem;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 999;
-            width: 60%;
-            border-radius: 10px;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .greyed-out {
-            opacity: 0.5;
-        }
-
-        .contact-visible {
-            opacity: 1;
-        }
-    </style>
 </head>
-<body>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
 
-    <!-- Header Section -->
-    <header>
+    <nav id="scrollspy" class="navbar navbar-light bg-light navbar-expand-lg fixed-top" data-spy="affix" data-offset-top="20">
         <div class="container">
-            <h1>OILBACK - Sustainable Metal Manufacturing</h1>
-            <p>Revolutionizing the metal industry with Circular Economy principles.</p>
+            <a class="navbar-brand" href="#"><img src="assets/imgs/brand.svg" alt="" class="brand-img"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#portfolio">Our Mission</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testmonial">The Problem</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog">Our Solution</a>
+                    </li>
+                    <li class="nav-item ml-0 ml-lg-4">
+                        <a class="nav-link btn btn-primary" href="components.html">Benefits</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Clock Section -->
-    <div class="clock-container">
-        <div class="clock-message-top">The clock is ticking!</div>
-        <div class="clock">
-            <div class="hand hour-hand"></div>
-            <div class="hand minute-hand"></div>
+    <header id="home" class="header">
+        <div class="overlay"></div>
+
+        <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">  
+            <div class="container">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1 class="carousel-title">We Make<br>Sustainable Metal Manufacturing</h1>
+                            <button class="btn btn-primary btn-rounded">Learn More</button>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1 class="carousel-title">Circular Economy <br>in Metal Manufacturing</h1>
+                            <button class="btn btn-primary btn-rounded">Learn More</button>
+                          </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1 class="carousel-title">Revolutionize<br>Recycling and Efficiency</h1>
+                            <button class="btn btn-primary btn-rounded">Learn More</button>
+                          </div>
+                    </div>
+                </div>
+            </div>        
         </div>
-        <div class="clock-message-bottom">The world is not waiting for sustainability to happen.</div>
-        <button class="btn-learn-more" id="learnMoreBtn">Learn More About the Project</button>
-    </div>
 
-    <!-- Hidden Content Section -->
-    <div class="hidden-section" id="hiddenContent">
-        <!-- Mission Section -->
-        <section class="section" id="mission">
-            <div class="container">
-                <h2>Our Mission</h2>
-                <p>At OILBACK, we aim to reduce waste and emissions by reclaiming and reusing cutting fluids from metal chips. Our innovative mobile recycling service ensures eco-efficiency and financial savings for manufacturers.</p>
-                <img src="Pictures/Banner.jpg" alt="Mission Image" class="small-image">
+        <div class="infos container mb-4 mb-md-2">
+            <div class="title">
+                <h6 class="subtitle font-weight-normal">Looking for Eco-friendly Solutions?</h6>
+                <h5>Join the Circular Economy</h5>
+                <p class="font-small">At OILBACK, we turn waste into reusable resources.</p>
             </div>
-        </section>
-
-        <!-- Problem Section -->
-        <section class="section" id="problem">
-            <div class="container">
-                <h2>The Problem</h2>
-                <p>The metal manufacturing industry generates significant waste in the form of oily metal chips. Manufacturers must currently dispose of this waste through expensive and inefficient methods, leading to both financial and environmental harm.</p>
-                <img src="Pictures/Problem.jpg" alt="Problem Image" class="small-image">
-            </div>
-        </section>
-
-        <!-- Solution Section -->
-        <section class="section" id="solution">
-            <div class="container">
-                <h2>Our Solution</h2>
-                <p>We provide a mobile recycling service that separates oil from metal chips directly at the manufacturer's site, allowing them to reuse the oil and efficiently recycle the metal. This process is faster, cheaper, and much more sustainable.</p>
-                <img src="Pictures/Solution.jpg" alt="Solution Image" class="small-image">
-            </div>
-        </section>
-
-        <!-- Benefits Section -->
-        <section class="benefits text-white" id="benefits">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 benefit-item">
-                        <i class="fas fa-dollar-sign"></i>
-                        <h3>Economic Benefits</h3>
-                        <p>Save up to 100,000 CHF annually through reduced oil and waste disposal costs.</p>
+            <div class="socials text-right">
+                <div class="row justify-content-between">
+                    <div class="col">
+                        <a class="d-block subtitle"><i class="ti-microphone pr-2"></i> (123) 456-7890</a>
+                        <a class="d-block subtitle"><i class="ti-email pr-2"></i> info@oilback.com</a>
                     </div>
-                    <div class="col-md-4 benefit-item">
-                        <i class="fas fa-globe"></i>
-                        <h3>Environmental Impact</h3>
-                        <p>Reduce your carbon footprint and contribute to a cleaner environment.</p>
-                    </div>
-                    <div class="col-md-4 benefit-item">
-                        <i class="fas fa-tools"></i>
-                        <h3>Efficiency</h3>
-                        <p>Our on-site service allows manufacturers to focus on production while we handle the recycling.</p>
+                    <div class="col">
+                        <h6 class="subtitle font-weight-normal mb-2">Social Media</h6>
+                        <div class="social-links">
+                            <a href="javascript:void(0)" class="link pr-1"><i class="ti-facebook"></i></a>
+                            <a href="javascript:void(0)" class="link pr-1"><i class="ti-twitter-alt"></i></a>
+                            <a href="javascript:void(0)" class="link pr-1"><i class="ti-google"></i></a>
+                            <a href="javascript:void(0)" class="link pr-1"><i class="ti-pinterest-alt"></i></a>
+                            <a href="javascript:void(0)" class="link pr-1"><i class="ti-instagram"></i></a>
+                            <a href="javascript:void(0)" class="link pr-1"><i class="ti-rss"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </header>
 
-        <!-- Team Section -->
-        <section class="section" id="team">
-            <div class="container">
-                <h2>Meet Our Team</h2>
-                <p>We are a multidisciplinary team of experts in engineering, sustainability, and management. Together, we are driving the future of eco-friendly metal manufacturing.</p>
-                <img src="Pictures/Team.jpg" alt="Team Image" class="small-image">
+    <section class="section" id="about">
+
+        <div class="container">
+
+            <div class="row align-items-center mr-auto">
+                <div class="col-md-4">
+                    <h6 class="xs-font mb-0">Our Mission</h6>
+                    <h3 class="section-title">Sustainable Metal Manufacturing</h3>
+                    <p>At OILBACK, we are dedicated to reducing waste and emissions by reclaiming and reusing cutting fluids from metal chips. Our innovative service ensures eco-efficiency and financial savings for manufacturers.</p>
+
+                    <a href="javascript:void(0)">Read more...</a>
+                </div>
+                <div class="col-sm-6 col-md-4 ml-auto">
+                    <div class="widget">
+                        <div class="icon-wrapper">
+                            <i class="ti-calendar"></i>
+                        </div>
+                        <div class="infos-wrapper">
+                            <h4 class="text-primary">20+</h4>
+                            <p>Years in Metal Manufacturing</p>
+                        </div>
+                    </div>
+                    <div class="widget">
+                        <div class="icon-wrapper">
+                            <i class="ti-face-smile"></i>
+                        </div>
+                        <div class="infos-wrapper">
+                            <h4 class="text-primary">150+</h4>
+                            <p>Satisfied Clients</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="widget">
+                        <div class="icon-wrapper">
+                            <i class="ti-star"></i>
+                        </div>
+                        <div class="infos-wrapper">
+                            <h4 class="text-primary">10,000+</h4>
+                            <p>Tons of Waste Recycled</p>
+                        </div>
+                    </div>
+                    <div class="widget">
+                        <div class="icon-wrapper">
+                            <i class="ti-user"></i>
+                        </div>
+                        <div class="infos-wrapper">
+                            <h4 class="text-primary">500+</h4>
+                            <p>Experts in Sustainability</p>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </section>
+
+    <section class="section" id="portfolio">
+        <div class="container">
+            <h6 class="xs-font mb-0">The Problem</h6>
+            <h3 class="section-title pb-4">Oil Waste in Metal Manufacturing</h3>
+            <p>The metal manufacturing industry generates significant waste in the form of oily metal chips. These must be disposed of using expensive and inefficient methods, resulting in financial loss and environmental harm.</p>
+        </div>
+
+        <div id="owl-portfolio" class="owl-carousel owl-theme mt-4">
+            <a href="javascript:void(0)" class="item expertises-item">
+                <img src="assets/imgs/img-1.jpg" class="box-shadow">
+                <h6 class="mt-3 mb-2">Environmental Impact</h6>
+                <p>Metal chips with oil residues cause serious environmental concerns.</p>
+            </a> 
+            <a href="javascript:void(0)" class="item expertises-item">
+                <img src="assets/imgs/img-2.jpg" class="box-shadow">
+                <h6 class="mt-3 mb-2">Inefficiency</h6>
+                <p>Current disposal methods are costly and time-consuming.</p>
+            </a> 
+            <a href="javascript:void(0)" class="item expertises-item">
+                <img src="assets/imgs/img-3.jpg" class="box-shadow">
+                <h6 class="mt-3 mb-2">Oil Reclamation</h6>
+                <p>Recovering and reusing oil reduces waste and costs.</p>
+            </a> 
+        </div>
+    </section>
+
+    <section class="section" id="testmonial">
+        <div class="container">
+            <h6 class="xs-font mb-0">Our Solution</h6>
+            <h3 class="section-title">Mobile Oil Recycling</h3>
+            <p>We offer a mobile recycling service that separates oil from metal chips at the manufacturer's site. This allows for oil reuse and metal recycling, creating a faster, more efficient, and sustainable process.</p>
+        </div>
+    </section>
+
+    <section class="section bg-overlay">
+        <div class="container">
+            <div class="infos mb-4 mb-md-2">
+            <div class="title">
+                <h6 class="subtitle font-weight-normal">Join OILBACK</h6>
+                <h5>Be Part of the Solution</h5>
+                <p class="font-small">Help us revolutionize the metal industry and reduce waste for a sustainable future.</p>
             </div>
-        </section>
-
-        <!-- Future of OILBACK Section -->
-        <section class="section" id="future">
-            <div class="container">
-                <h2>The Future of OILBACK</h2>
-                <p>With the potential to reduce environmental impact and save costs, OILBACK aims to expand its services across Europe, making sustainable practices the norm in the metal manufacturing industry.</p>
-                <img src="Pictures/Steps.jpg" alt="Future Image" class="small-image">
-                <img src="Pictures/Join.jpg" alt="Join Us Image" class="small-image">
+            <div class="socials">
+                <div class="row justify-content-between">
+                    <div class="col">
+                        <a class="d-block subtitle"><i class="ti-microphone"></i> (123) 456-7890</a>
+                        <a class="d-block subtitle"><i class="ti-email"></i> info@oilback.com</a>
+                    </div>
+                    <div class="col">
+                        <h6 class="subtitle font-weight-normal mb-1">Social Media</h6>
+                        <div class="social-links">
+                            <a href="javascript:void(0)" class="link pr-1"><i class="ti-facebook"></i></a>
+                            <a href="javascript:void(0)" class="link pr-1"><i class="ti-twitter-alt"></i></a>
+                            <a href="javascript:void(0)" class="link pr-1"><i class="ti-google"></i></a>
+                            <a href="javascript:void(0)" class="link pr-1"><i class="ti-pinterest-alt"></i></a>
+                            <a href="javascript:void(0)" class="link pr-1"><i class="ti-instagram"></i></a>
+                            <a href="javascript:void(0)" class="link pr-1"><i class="ti-rss"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </section>
-    </div>
+        </div> 
+        </div>
+    </section>
 
-    <!-- Bootstrap & jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <section id="contact" class="section pb-0">
+        <div class="container">
+            <h6 class="xs-font mb-0">Contact Us</h6>
+            <h3 class="section-title mb-5">Get in Touch</h3>
 
-    <!-- Custom JavaScript -->
-    <script>
-        document.getElementById("learnMoreBtn").addEventListener("click", function () {
-            var hiddenSection = document.getElementById("hiddenContent");
-            hiddenSection.classList.toggle("visible");
-        });
-    </script>
+            <div class="row align-items-center justify-content-between">
+                <div class="col-md-8 col-lg-7">
+                    <form class="contact-form">
+                        <div class="form-row">
+                            <div class="col form-group">
+                                <input type="text" class="form-control" placeholder="Name">
+                            </div>
+                            <div class="col form-group">
+                                <input type="email" class="form-control" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="" id="" cols="30" rows="5" class="form-control" placeholder="Your Message"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary btn-block" value="Send Message">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4 d-none d-md-block order-1">
+                    <ul class="list">
+                        <li class="list-head">
+                            <h6>CONTACT INFO</h6>
+                        </li>
+                        <li class="list-body">
+                            <p class="py-2">Contact us and we'll get back to you within 24 hours.</p>
+                            <p class="py-2"><i class="ti-location-pin"></i> 12345 Fake ST NoWhere AB Country</p>
+                            <p class="py-2"><i class="ti-email"></i> info@oilback.com</p>
+                            <p class="py-2"><i class="ti-microphone"></i> (123) 456-7890</p>
+                        </li>
+                    </ul> 
+                </div>
+            </div>
+
+            <footer class="footer mt-5 border-top">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-md-6 text-center text-md-left">
+                        <p class="mb-0">Copyright <script>document.write(new Date().getFullYear())</script> &copy; <a target="_blank" href="http://www.devcrud.com">Oilback</a></p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-right">
+                        <div class="social-links">
+                            <a href="javascript:void(0)" class="link"><i class="ti-facebook"></i></a>
+                            <a href="javascript:void(0)" class="link"><i class="ti-twitter-alt"></i></a>
+                            <a href="javascript:void(0)" class="link"><i class="ti-google"></i></a>
+                            <a href="javascript:void(0)" class="link"><i class="ti-pinterest-alt"></i></a>
+                            <a href="javascript:void(0)" class="link"><i class="ti-instagram"></i></a>
+                            <a href="javascript:void(0)" class="link"><i class="ti-rss"></i></a>
+                        </div>
+                    </div>
+                </div> 
+            </footer>
+        </div>
+    </section>
+    
+    <!-- core  -->
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap 3 affix -->
+    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+    
+    <!-- Owl carousel  -->
+    <script src="assets/vendors/owl-carousel/js/owl.carousel.js"></script>
+
+    <!-- Ollie js -->
+    <script src="assets/js/Ollie.js"></script>
 
 </body>
 </html>
