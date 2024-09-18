@@ -9,7 +9,7 @@
 
     <!-- font icons -->
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
-    
+
     <!-- owl carousel -->
     <link rel="stylesheet" href="assets/vendors/owl-carousel/css/owl.carousel.css">
     <link rel="stylesheet" href="assets/vendors/owl-carousel/css/owl.theme.default.css">
@@ -17,9 +17,88 @@
     <!-- Bootstrap + main styles -->
     <link rel="stylesheet" href="assets/css/ollie.css">
 
+    <!-- Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <!-- Custom styles for Our Solution section -->
+    <style>
+        /* Specific styling for "Our Solution" */
+        #testmonial h6, #portfolio h6, #join h6, #about h6 {
+            font-size: 4rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #00bfff; /* Hellblau für "Looking for Eco-friendly Solutions?" */
+            margin-bottom: 1rem;
+        }
+
+        #testmonial h6 {
+            font-size: 4rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #00ff00; /* Bright and saturated green */
+            margin-bottom: 1rem;
+        }
+
+        /* Anpassung für den Text in der "Our Solution"-Sektion */
+        #testmonial p {
+            color: white; /* Text in der Sektion wird weiß geschrieben */
+        }
+
+        #owl-portfolio {
+            display: flex;
+            justify-content: center; /* Zentriert die Bilder horizontal */
+            gap: 20px; /* Fügt optional einen Abstand zwischen den Bildern hinzu */
+        }
+
+            #owl-portfolio .item {
+                text-align: center; /* Zentriert den Text unter den Bildern */
+                flex-basis: 30%; /* Sorgt für gleichmäßige Größe der Bilder */
+            }
+
+        /* Style für das kleinere "JOIN OILBACK" und "SOCIAL MEDIA" */
+        #join h6, .social-links a {
+            font-size: 2rem; /* Kleinere Schriftgröße */
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #00bfff; /* Hellblau */
+        }
+
+        /* Kleinere Schriftgröße für "Inefficiency", "Environmental Impact", "Oil Reclamation" in Schwarz */
+        #owl-portfolio h6 {
+            font-size: 2rem; /* Kleinere Schriftgröße */
+            color: #000000; /* Schwarze Schriftfarbe */
+        }
+
+        #testmonial {
+            position: relative; /* Positioniert das Element relativ, um das Pseudo-Element korrekt zu platzieren */
+            background-image: url('Pictures/recycling.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: scroll;
+            background-repeat: no-repeat;
+            color: white;
+            padding: 100px 0;
+        }
+
+            #testmonial::before {
+                content: ''; /* Erzeugt ein leeres Pseudo-Element */
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5); /* Fügt eine halbtransparente schwarze Schicht hinzu */
+                z-index: 1; /* Setzt das Overlay hinter den Text, aber über das Hintergrundbild */
+            }
+
+            #testmonial * {
+                position: relative;
+                z-index: 2; /* Bringt den Text vor das Overlay */
+            }
+    </style>
+
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
-
     <nav id="scrollspy" class="navbar navbar-light bg-light navbar-expand-lg fixed-top" data-spy="affix" data-offset-top="20">
         <div class="container">
             <a class="navbar-brand" href="#"><img src="Pictures/Logo.jpg" alt="" class="brand-img"></a>
@@ -58,19 +137,19 @@
                     <div class="carousel-item active">
                         <div class="carousel-caption d-none d-md-block">
                             <h1 class="carousel-title">We Make<br>Sustainable Metal Manufacturing</h1>
-                            <button class="btn btn-primary btn-rounded">Learn More</button>
+                            <button class="btn btn-primary btn-rounded" onclick="location.href='#about'">Learn More</button>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="carousel-caption d-none d-md-block">
                             <h1 class="carousel-title">Circular Economy <br>in Metal Manufacturing</h1>
-                            <button class="btn btn-primary btn-rounded">Learn More</button>
+                            <button class="btn btn-primary btn-rounded" onclick="location.href='#about'">Learn More</button>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="carousel-caption d-none d-md-block">
                             <h1 class="carousel-title">Revolutionize<br>Recycling and Efficiency</h1>
-                            <button class="btn btn-primary btn-rounded">Learn More</button>
+                            <button class="btn btn-primary btn-rounded" onclick="location.href='#about'">Learn More</button>
                         </div>
                     </div>
                 </div>
@@ -127,7 +206,7 @@
                 <div class="col-sm-6 col-md-4 ml-auto">
                     <div class="widget">
                         <div class="icon-wrapper">
-                            <i class="fas fa-dollar-sign fa-3x"></i> <!-- Large Icon -->
+                            <i class="fas fa-dollar-sign fa-3x"></i> <!-- Großes Icon für Economic Benefits -->
                         </div>
                         <div class="infos-wrapper">
                             <h4 class="text-primary">Economic Benefits</h4>
@@ -136,7 +215,7 @@
                     </div>
                     <div class="widget">
                         <div class="icon-wrapper">
-                            <i class="fas fa-globe fa-3x"></i> <!-- Large Icon -->
+                            <i class="fas fa-globe fa-3x"></i> <!-- Großes Icon für Environmental Impact -->
                         </div>
                         <div class="infos-wrapper">
                             <h4 class="text-primary">Environmental Impact</h4>
@@ -147,7 +226,7 @@
                 <div class="col-sm-6 col-md-4">
                     <div class="widget">
                         <div class="icon-wrapper">
-                            <i class="fas fa-tools fa-3x"></i> <!-- Large Icon -->
+                            <i class="fas fa-tools fa-3x"></i> <!-- Großes Icon für Efficiency -->
                         </div>
                         <div class="infos-wrapper">
                             <h4 class="text-primary">Efficiency</h4>
@@ -166,18 +245,18 @@
             <p>The metal manufacturing industry generates significant waste in the form of oily metal chips. These must be disposed of using expensive and inefficient methods, resulting in financial loss and environmental harm.</p>
         </div>
 
-        <div id="owl-portfolio" class="owl-carousel owl-theme mt-4">
-            <a href="javascript:void(0)" class="item expertises-item">
-                <img src="assets/imgs/img-1.jpg" class="box-shadow">
-                <h6 class="mt-3 mb-2">Environmental Impact</h6>
-                <p>Metal chips with oil residues cause serious environmental concerns.</p>
-            </a>
-            <a href="javascript:void(0)" class="item expertises-item">
+        <div id="owl-portfolio" class="owl-carousel owl-theme mt-4 d-flex justify-content-center">
+            <a href="javascript:void(0)" class="item expertises-item text-center">
                 <img src="assets/imgs/img-2.jpg" class="box-shadow">
                 <h6 class="mt-3 mb-2">Inefficiency</h6>
                 <p>Current disposal methods are costly and time-consuming.</p>
             </a>
-            <a href="javascript:void(0)" class="item expertises-item">
+            <a href="javascript:void(0)" class="item expertises-item text-center">
+                <img src="assets/imgs/img-1.jpg" class="box-shadow">
+                <h6 class="mt-3 mb-2">Environmental Impact</h6>
+                <p>Metal chips with oil residues cause serious environmental concerns.</p>
+            </a>
+            <a href="javascript:void(0)" class="item expertises-item text-center">
                 <img src="assets/imgs/img-3.jpg" class="box-shadow">
                 <h6 class="mt-3 mb-2">Oil Reclamation</h6>
                 <p>Recovering and reusing oil reduces waste and costs.</p>
@@ -193,7 +272,7 @@
         </div>
     </section>
 
-    <section class="section bg-overlay">
+    <section id="join" class="section bg-overlay">
         <div class="container">
             <div class="infos mb-4 mb-md-2">
                 <div class="title">
@@ -266,8 +345,10 @@
             <footer class="footer mt-5 border-top">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-md-6 text-center text-md-left">
-                        <p class="mb-0">Copyright
-                        <script>document.write(new Date().getFullYear())</script> &copy; <a target="_blank" href="http://www.devcrud.com">Oilback</a></p>
+                        <p class="mb-0">
+                            Copyright
+                            <script>document.write(new Date().getFullYear())</script> &copy; <a target="_blank" href="http://www.devcrud.com">Oilback</a>
+                        </p>
                     </div>
                     <div class="col-md-6 text-center text-md-right">
                         <div class="social-links">
