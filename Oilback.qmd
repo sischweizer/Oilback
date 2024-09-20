@@ -1,5 +1,5 @@
 ---
-title: "OILBACK - Sustainable Metal Manufacturing"
+title: "Oilbck - Sustainable Metal Manufacturing"
 date: today
 author:
     name: Simon Schweizer
@@ -21,13 +21,13 @@ editor: visual
 theme: quartz # You can change the theme here
 ---
 
-# Welcome to OILBACK
+# Welcome to Oilbck
 ![Main Banner Image](Pictures/Banner.jpg)
 
 ## Our Mission
 We aim to revolutionize the metal manufacturing industry through the integration of Circular Economy principles. By reclaiming and reusing cutting fluids from oily metal chips, we reduce waste, emissions, and manufacturing costs.
 
-*This section introduces the main mission of OILBACK.*  
+*This section introduces the main mission of Oilbck.*  
 
 ![Circular Economy Image](path/to/circular_image.jpg)
 
@@ -63,7 +63,7 @@ We bring the recycling process to the manufacturer’s site! Our mobile recyclin
 - **Process Efficiency**: Minimize logistical complexities and boost operational efficiency.
 
 ## Team
-Meet the team behind OILBACK:
+Meet the team behind Oilbck:
 
 - **Benjamin Ott**: Engineering Manager
 - **Valentin Egli**: Project Lead
